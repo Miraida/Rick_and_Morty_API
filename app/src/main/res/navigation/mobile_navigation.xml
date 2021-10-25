@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.geek.rick_and_morty_api.ui.character.CharacterFragment"
+        android:label="@string/title_character"
+        tools:layout="@layout/fragment_character" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.geek.rick_and_morty_api.ui.episode.EpisodeFragment"
+        android:label="@string/title_episode"
+        tools:layout="@layout/fragment_episode" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.geek.rick_and_morty_api.ui.location.LocationFragment"
+        android:label="@string/title_location"
+        tools:layout="@layout/fragment_location" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.geek.rick_and_morty_api.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/search_fragment" />
+
+</navigation>

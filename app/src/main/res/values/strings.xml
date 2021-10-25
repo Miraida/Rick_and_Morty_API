@@ -1,0 +1,13 @@
+<resources>
+    <!--  App Component   -->
+    <string name="app_name">Rick_and_Morty_API</string>
+
+    <!--  Navigation Component -->
+    <string name="title_character">Character</string>
+    <string name="title_episode">Episode</string>
+    <string name="title_location">Location</string>
+    <string name="title_search">Search</string>
+
+    <!-- View -->
+
+</resources>
