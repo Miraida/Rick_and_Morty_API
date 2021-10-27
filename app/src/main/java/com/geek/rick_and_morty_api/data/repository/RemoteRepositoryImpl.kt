@@ -9,98 +9,104 @@ import com.geek.rick_and_morty_api.data.remote.dto.episode.mapTo
 import com.geek.rick_and_morty_api.data.remote.dto.location.mapTo
 import com.geek.rick_and_morty_api.domain.model.*
 import com.geek.rick_and_morty_api.domain.repository.RemoteRepository
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : RemoteRepository {
 
-    override suspend fun getCharacters(): LiveData<Resource<List<Characters>>> = liveData {
-        emit(Resource.loading(null))
+    override  fun getCharacters(): LiveData<Resource<List<Characters>>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
 
-        val response = api.getAllCharacters()
+            val response = api.getAllCharacters()
 
-        emit(
-            if (response.isSuccessful && response.body() != null) {
-                Resource.success(response.body()?.data?.mapTo(), response.code())
-            } else {
-                Resource.error(response.message(), null, response.code())
-            }
-        )
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
+        }
 
-    }
+    override  fun getCharacter(id: Int): LiveData<Resource<Character>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
 
-    override suspend fun getCharacter(id: Int): LiveData<Resource<Character>> = liveData {
-        emit(Resource.loading(null))
+            val response = api.getCharacter(id.toString())
 
-        val response = api.getCharacter(id.toString())
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
 
-        emit(
-            if (response.isSuccessful && response.body() != null) {
-                Resource.success(response.body()?.data?.mapTo(), response.code())
-            } else {
-                Resource.error(response.message(), null, response.code())
-            }
-        )
+        }
 
-    }
+    override  fun getEpisodes(): LiveData<Resource<List<Episodes>>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
 
-    override suspend fun getEpisodes(): LiveData<Resource<List<Episodes>>> = liveData {
-        emit(Resource.loading(null))
+            val response = api.getAllEpisodes()
 
-        val response = api.getAllEpisodes()
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
 
-        emit(
-            if (response.isSuccessful && response.body() != null) {
-                Resource.success(response.body()?.data?.mapTo(), response.code())
-            } else {
-                Resource.error(response.message(), null, response.code())
-            }
-        )
+        }
 
-    }
+    override  fun getEpisode(id: Int): LiveData<Resource<Episode>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
 
-    override suspend fun getEpisode(id: Int): LiveData<Resource<Episode>> = liveData {
-        emit(Resource.loading(null))
+            val response = api.getEpisode(id.toString())
 
-        val response = api.getEpisode(id.toString())
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
 
-        emit(
-            if (response.isSuccessful && response.body() != null) {
-                Resource.success(response.body()?.data?.mapTo(), response.code())
-            } else {
-                Resource.error(response.message(), null, response.code())
-            }
-        )
+        }
 
-    }
+    override  fun getLocations(): LiveData<Resource<List<Locations>>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
 
-    override suspend fun getLocations(): LiveData<Resource<List<Locations>>> = liveData {
-        emit(Resource.loading(null))
+            val response = api.getAllLocations()
 
-        val response = api.getAllLocations()
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
 
-        emit(
-            if (response.isSuccessful && response.body() != null) {
-                Resource.success(response.body()?.data?.mapTo(), response.code())
-            } else {
-                Resource.error(response.message(), null, response.code())
-            }
-        )
+        }
 
-    }
+    override  fun getLocation(id: Int): LiveData<Resource<Location>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
 
-    override suspend fun getLocation(id: Int): LiveData<Resource<Location>> = liveData {
-        emit(Resource.loading(null))
+            val response = api.getLocation(id.toString())
 
-        val response = api.getLocation(id.toString())
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
 
-        emit(
-            if (response.isSuccessful && response.body() != null) {
-                Resource.success(response.body()?.data?.mapTo(), response.code())
-            } else {
-                Resource.error(response.message(), null, response.code())
-            }
-        )
-
-    }
+        }
 
 }

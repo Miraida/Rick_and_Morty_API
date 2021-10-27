@@ -6,11 +6,11 @@ import com.geek.rick_and_morty_api.domain.model.*
 
 interface RemoteRepository {
 
-    suspend fun getCharacters(): LiveData<Resource<List<Characters>>>
-    suspend fun getCharacter(id:Int): LiveData<Resource<Character>>
-    suspend fun getEpisodes(): LiveData<Resource<List<Episodes>>>
-    suspend fun getEpisode(id:Int): LiveData<Resource<Episode>>
-    suspend fun getLocations(): LiveData<Resource<List<Locations>>>
-    suspend fun getLocation(id:Int): LiveData<Resource<Location>>
+     fun getCharacters(): LiveData<Resource<List<Characters>>>
+     fun getCharacter(id:Int): LiveData<Resource<Character>>
+     fun getEpisodes(): LiveData<Resource<List<Episodes>>>
+     fun getEpisode(id:Int): LiveData<Resource<Episode>>
+     fun getLocations(): LiveData<Resource<List<Locations>>>
+     fun getLocation(id:Int): LiveData<Resource<Location>>
 
 }
