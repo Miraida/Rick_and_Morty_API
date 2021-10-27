@@ -1,6 +1,8 @@
 package com.geek.rick_and_morty_api.data.remote.dto.character
 
+import android.util.Log
 import com.geek.rick_and_morty_api.domain.model.Character
+import com.geek.rick_and_morty_api.domain.model.Characters
 
 data class CharacterDto(
     val created: String?,
@@ -30,4 +32,12 @@ fun CharacterDto.mapTo(): Character {
         this.status,
         this.type
     )
+}
+
+fun List<CharacterDto>.mapTo():List<Characters>{
+    val list = ArrayList<Characters>()
+    this.forEach { i ->
+        list.add(Characters(i.name, i.image,i.id))
+    }
+    return list
 }

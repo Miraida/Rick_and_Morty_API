@@ -12,7 +12,7 @@ fun LocationsDto.mapTo(): List<Locations> {
     val list = ArrayList<Locations>()
 
     for (i in this.results!!) {
-        list.add(Locations(i.name, i.type))
+        list.add(Locations(i.name, i.type,i.id))
     }
     return list
 }

@@ -12,7 +12,7 @@ fun EpisodesDto.mapTo(): List<Episodes> {
     val list = ArrayList<Episodes>()
 
     for (i in this.results!!) {
-        list.add(Episodes(i.name, i.air_date))
+        list.add(Episodes(i.name, i.air_date,i.id))
     }
     return list
 }

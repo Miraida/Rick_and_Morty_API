@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : RemoteRepository {
 
-    override  fun getCharacters(): LiveData<Resource<List<Characters>>> =
+    override fun getCharacters(): LiveData<Resource<List<Characters>>> =
         liveData(Dispatchers.IO) {
             emit(Resource.loading(null))
 
@@ -22,14 +22,51 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
             emit(
                 if (response.isSuccessful && response.body() != null) {
-                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                    Resource.success(response.body()?.mapTo(), response.code())
+
                 } else {
                     Resource.error(response.message(), null, response.code())
                 }
             )
         }
 
-    override  fun getCharacter(id: Int): LiveData<Resource<Character>> =
+    override fun getCharactersById(ids: String): LiveData<Resource<List<Characters>>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
+
+            val response = api.getCharactersById(ids)
+
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.mapTo(), response.code())
+
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
+        }
+
+    override fun getCharactersByName(
+        name: String,
+        status: String,
+        gender: String
+    ): LiveData<Resource<List<Characters>>> =
+        liveData(Dispatchers.IO) {
+            emit(Resource.loading(null))
+
+            val response = api.getCharactersByName(name, status, gender)
+
+            emit(
+                if (response.isSuccessful && response.body() != null) {
+                    Resource.success(response.body()?.mapTo(), response.code())
+
+                } else {
+                    Resource.error(response.message(), null, response.code())
+                }
+            )
+        }
+
+    override fun getCharacter(id: Int): LiveData<Resource<Character>> =
         liveData(Dispatchers.IO) {
             emit(Resource.loading(null))
 
@@ -37,7 +74,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
             emit(
                 if (response.isSuccessful && response.body() != null) {
-                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                    Resource.success(response.body()?.mapTo(), response.code())
                 } else {
                     Resource.error(response.message(), null, response.code())
                 }
@@ -45,7 +82,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
         }
 
-    override  fun getEpisodes(): LiveData<Resource<List<Episodes>>> =
+    override fun getEpisodes(): LiveData<Resource<List<Episodes>>> =
         liveData(Dispatchers.IO) {
             emit(Resource.loading(null))
 
@@ -53,7 +90,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
             emit(
                 if (response.isSuccessful && response.body() != null) {
-                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                    Resource.success(response.body()?.mapTo(), response.code())
                 } else {
                     Resource.error(response.message(), null, response.code())
                 }
@@ -61,7 +98,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
         }
 
-    override  fun getEpisode(id: Int): LiveData<Resource<Episode>> =
+    override fun getEpisode(id: Int): LiveData<Resource<Episode>> =
         liveData(Dispatchers.IO) {
             emit(Resource.loading(null))
 
@@ -69,7 +106,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
             emit(
                 if (response.isSuccessful && response.body() != null) {
-                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                    Resource.success(response.body()?.mapTo(), response.code())
                 } else {
                     Resource.error(response.message(), null, response.code())
                 }
@@ -77,7 +114,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
         }
 
-    override  fun getLocations(): LiveData<Resource<List<Locations>>> =
+    override fun getLocations(): LiveData<Resource<List<Locations>>> =
         liveData(Dispatchers.IO) {
             emit(Resource.loading(null))
 
@@ -85,7 +122,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
             emit(
                 if (response.isSuccessful && response.body() != null) {
-                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                    Resource.success(response.body()?.mapTo(), response.code())
                 } else {
                     Resource.error(response.message(), null, response.code())
                 }
@@ -93,7 +130,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
         }
 
-    override  fun getLocation(id: Int): LiveData<Resource<Location>> =
+    override fun getLocation(id: Int): LiveData<Resource<Location>> =
         liveData(Dispatchers.IO) {
             emit(Resource.loading(null))
 
@@ -101,7 +138,7 @@ class RemoteRepositoryImpl @Inject constructor(private val api: ApiService) : Re
 
             emit(
                 if (response.isSuccessful && response.body() != null) {
-                    Resource.success(response.body()?.data?.mapTo(), response.code())
+                    Resource.success(response.body()?.mapTo(), response.code())
                 } else {
                     Resource.error(response.message(), null, response.code())
                 }

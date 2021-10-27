@@ -10,9 +10,8 @@ data class CharactersDto(
 
 fun CharactersDto.mapTo(): List<Characters> {
     val list = ArrayList<Characters>()
-
-    for (i in this.results!!) {
-        list.add(Characters(i.name, i.image))
+    this.results?.forEach { i ->
+        list.add(Characters(i.name, i.image, i.id))
     }
     return list
 }
