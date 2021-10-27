@@ -3,14 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable-v24/bg_edt.xml" value="0.15" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable-v24/ic_error_24.xml" value="0.1287037037037037" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1287037037037037" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1287037037037037" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1287037037037037" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable/ic_location_24.xml" value="0.1287037037037037" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1287037037037037" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/drawable/ic_search_24.xml" value="0.1287037037037037" />
-        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/activity_main.xml" value="0.1082427536231884" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/character_detail_fragment.xml" value="0.14" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/episode_detail_fragment.xml" value="0.12" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/fragment_alert_dialog.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/fragment_character.xml" value="0.12" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/fragment_dashboard.xml" value="0.1094224924012158" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/fragment_episode.xml" value="0.1094224924012158" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/fragment_location.xml" value="0.1094224924012158" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/item_character_rv.xml" value="0.16" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/item_episode_rv.xml" value="0.1094224924012158" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/location_detail_fragment.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/layout/search_fragment.xml" value="0.12" />
         <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/menu/search_menu.xml" value="0.225" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1287037037037037" />
+        <entry key="..\:/AndroidProjects/Rick_and_Morty_API/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1287037037037037" />
       </map>
     </option>
   </component>

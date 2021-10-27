@@ -7,6 +7,26 @@
     <string name="title_episode">Episode</string>
     <string name="title_location">Location</string>
     <string name="title_search">Search</string>
+    <string name="error_title">Error %1$s</string>
+    <string name="status">status:</string>
+    <string name="species">species:</string>
+    <string name="type">type:</string>
+    <string name="gender">gender:</string>
+    <string name="location">location:</string>
+    <string name="air_date">air_date:</string>
+    <string name="episode">episode:</string>
+    <string name="characters">Characters</string>
+    <string name="dimension">dimension:</string>
+    <string name="search_by_name">search by name</string>
+    <string name="title_status">status</string>
+    <string name="title_gender">gender</string>
+    <string name="alive">alive</string>
+    <string name="dead">dead</string>
+    <string name="unknown">unknown</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">cancel</string>
 
     <!-- View -->
 
