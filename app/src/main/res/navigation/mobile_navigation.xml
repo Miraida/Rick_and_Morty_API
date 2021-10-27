@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_character">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_character"
         android:name="com.geek.rick_and_morty_api.ui.character.CharacterFragment"
         android:label="@string/title_character"
         tools:layout="@layout/fragment_character" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_episode"
         android:name="com.geek.rick_and_morty_api.ui.episode.EpisodeFragment"
         android:label="@string/title_episode"
         tools:layout="@layout/fragment_episode" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_location"
         android:name="com.geek.rick_and_morty_api.ui.location.LocationFragment"
         android:label="@string/title_location"
         tools:layout="@layout/fragment_location" />
@@ -28,5 +28,23 @@
         android:name="com.geek.rick_and_morty_api.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/search_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_detail_character"
+        android:name="com.geek.rick_and_morty_api.ui.character_detail.CharacterDetailFragment"
+        android:label="character_detail_fragment"
+        tools:layout="@layout/character_detail_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_detail_episode"
+        android:name="com.geek.rick_and_morty_api.ui.episode_detail.EpisodeDetailFragment"
+        android:label="episode_detail_fragment"
+        tools:layout="@layout/episode_detail_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_detail_location"
+        android:name="com.geek.rick_and_morty_api.ui.location_detail.LocationDetailFragment"
+        android:label="location_detail_fragment"
+        tools:layout="@layout/location_detail_fragment" />
 
 </navigation>

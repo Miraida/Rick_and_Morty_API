@@ -1,13 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.character_detail.CharacterDetailFragment">
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_character"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:background="#8F000000"
+            android:fontFamily="@font/cherry_swash"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <LinearLayout style="@style/h_linear_style">
+
+        <TextView
+            style="@style/sub_tv_style"
+            android:text="@string/status" />
+
+        <TextView
+            android:id="@+id/status_tv"
+            style="@style/title_tv_style" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line_style" />
+
+    <LinearLayout style="@style/h_linear_style">
+
+        <TextView
+            style="@style/sub_tv_style"
+            android:text="@string/species" />
+
+        <TextView
+            android:id="@+id/species_tv"
+            style="@style/title_tv_style" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line_style" />
+
+    <LinearLayout style="@style/h_linear_style">
+
+        <TextView
+            style="@style/sub_tv_style"
+            android:text="@string/type" />
+
+        <TextView
+            android:id="@+id/type_tv"
+            style="@style/title_tv_style" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line_style" />
+
+    <LinearLayout style="@style/h_linear_style">
+
+        <TextView
+            style="@style/sub_tv_style"
+            android:text="@string/gender" />
+
+        <TextView
+            android:id="@+id/gender_tv"
+            style="@style/title_tv_style" />
+
+    </LinearLayout>
+
+    <View style="@style/view_line_style" />
+
+    <LinearLayout style="@style/h_linear_style">
+
+        <TextView
+            style="@style/sub_tv_style"
+            android:text="@string/location" />
+
+        <TextView
+            android:id="@+id/location_tv"
+            style="@style/title_tv_style" />
+
+    </LinearLayout>
+
+</LinearLayout>
